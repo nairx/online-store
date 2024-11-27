@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let students = [];
+    </script>
+    <style>
+      .container {
+        display: flex;
+      }
+      .box {
+        color: silver;
+        margin: 10px;
+      }
+      .content {
+        position: sticky;
+        top: 0px;
+      }
+      iframe {
+        width: 1000px;
+        border: none;
+        height: 100%;
+      }
+      .header {
+        position: sticky;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>My Students</h1>
+      <hr />
+    </div>
+    <div class="container">
+      <div id="divStudents"></div>
+      <div class="content">
+        <h2>Content</h2>
+        <iframe name="frm"></iframe>
+      </div>
+    </div>
+    <script>
+      let str = "<ol>";
+      students.map((value) => {
+        str =
+          str +
+          `<li><a href='https://${value.user}.github.io/' target="frm">${value.name}</a>[<a href='https://github.com/${value.user}' target='_blank'>GIT</a>]</li>`;
+      });
+      divStudents.innerHTML = str + "</ol>";
+    </script>
+  </body>
+</html>
